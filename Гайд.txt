@@ -1,0 +1,3 @@
+Запустить и прогнать файл to RGB
+Запустить make same extensions
+Запустить команду из command main cvat2yolo
