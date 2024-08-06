@@ -1,0 +1,15 @@
+Количество объектов в train:
+- bidr: 2000
+- ballon: 823
+- helicopter: 488
+- airplane: 1110
+- ballon_c: 800
+- drone: 308
+
+Количество объектов в val:
+- airplane: 851
+- ballon: 224
+- bidr: 1921
+- drone: 111
+- helicopter: 469
+- ballon_c: 226

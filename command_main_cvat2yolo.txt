@@ -1,0 +1,1 @@
+python main_cvat2yolo.py --cvat data_set_03_07v2 --mode manual --train_folder obj_Train_data_new --val_folder obj_Validation_data_new --img_format jpg --output_folder data_yolo_03_07v2
