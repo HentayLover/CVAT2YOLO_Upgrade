@@ -1,0 +1,35 @@
+from PIL import Image
+import os
+
+image_folder = 'New_photo\obj_Train_data'
+
+for filename in os.listdir(image_folder):
+    if filename.endswith(('.jpg', '.jpeg', '.png')):
+        filepath = os.path.join(image_folder, filename)
+        try:
+            # Открываем изображение
+            image = Image.open(filepath)
+
+            # Удаляем EXIF-данные
+            data = list(image.getdata())
+            image_without_exif = Image.new(image.mode, image.size)
+            image_without_exif.putdata(data)
+
+            # Конвертируем в RGB, если необходимо
+            if image_without_exif.mode == 'RGBA':
+                image_without_exif = image_without_exif.convert('RGB')
+            
+            # Сохраняем изображение, перезаписывая исходный файл
+            image_without_exif.save(filepath)
+            
+            print(f"Изображение {filename} обработано (EXIF удален, RGB).")
+        except FileNotFoundError:
+            print(f"Ошибка: файл не найден: {filepath}")
+        except Exception as e:
+            print(f"Ошибка при обработке файла {filepath}: {e}")
+print("Преоброзования завершены!")
+for filename in os.listdir(image_folder):
+    if filename.startswith(('wing', 'sky', '622eb7dd05a43d61','sun')):
+        file_path = os.path.join(image_folder, filename)
+        os.remove(file_path)
+        print(f"Файл удален: {filename}") 
